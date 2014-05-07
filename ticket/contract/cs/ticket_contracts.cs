@@ -39,7 +39,11 @@ namespace schemas.qbranch.se._2014._04.ticket
         
         private string classification_nameField;
         
-        private schemas.qbranch.se._2014._04.ticket.ticket.typeType typeField;
+        private string application_idField;
+        
+        private string application_nameField;
+        
+        private string ticket_typeField;
         
         private schemas.qbranch.se._2014._04.ticket.ticket.contactType contactField;
         
@@ -48,8 +52,6 @@ namespace schemas.qbranch.se._2014._04.ticket
         private schemas.qbranch.se._2014._04.ticket.ticket.notesType notesField;
         
         private schemas.qbranch.se._2014._04.ticket.ticket.businessType businessField;
-        
-        private schemas.qbranch.se._2014._04.ticket.ticket.attachmentsType attachmentsField;
         
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
@@ -168,19 +170,45 @@ namespace schemas.qbranch.se._2014._04.ticket
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public schemas.qbranch.se._2014._04.ticket.ticket.typeType type
+        public string application_id
         {
             get
             {
-                return this.typeField;
+                return this.application_idField;
             }
             set
             {
-                this.typeField = value;
+                this.application_idField = value;
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        public string application_name
+        {
+            get
+            {
+                return this.application_nameField;
+            }
+            set
+            {
+                this.application_nameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=10)]
+        public string ticket_type
+        {
+            get
+            {
+                return this.ticket_typeField;
+            }
+            set
+            {
+                this.ticket_typeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
         public schemas.qbranch.se._2014._04.ticket.ticket.contactType contact
         {
             get
@@ -193,7 +221,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
         public schemas.qbranch.se._2014._04.ticket.ticket.infoType info
         {
             get
@@ -206,7 +234,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
         public schemas.qbranch.se._2014._04.ticket.ticket.notesType notes
         {
             get
@@ -219,7 +247,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
         public schemas.qbranch.se._2014._04.ticket.ticket.businessType business
         {
             get
@@ -229,85 +257,6 @@ namespace schemas.qbranch.se._2014._04.ticket
             set
             {
                 this.businessField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
-        public schemas.qbranch.se._2014._04.ticket.ticket.attachmentsType attachments
-        {
-            get
-            {
-                return this.attachmentsField;
-            }
-            set
-            {
-                this.attachmentsField = value;
-            }
-        }
-        
-        [System.Diagnostics.DebuggerStepThroughAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.DataContractAttribute(Name="ticket.typeType", Namespace="http://schemas.qbranch.se/2014/04/ticket")]
-        public partial class typeType : object, System.Runtime.Serialization.IExtensibleDataObject
-        {
-            
-            private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-            
-            private schemas.qbranch.se._2014._04.ticket.ticket.typeType.idType idField;
-            
-            private string descriptionField;
-            
-            public System.Runtime.Serialization.ExtensionDataObject ExtensionData
-            {
-                get
-                {
-                    return this.extensionDataField;
-                }
-                set
-                {
-                    this.extensionDataField = value;
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-            public schemas.qbranch.se._2014._04.ticket.ticket.typeType.idType id
-            {
-                get
-                {
-                    return this.idField;
-                }
-                set
-                {
-                    this.idField = value;
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-            public string description
-            {
-                get
-                {
-                    return this.descriptionField;
-                }
-                set
-                {
-                    this.descriptionField = value;
-                }
-            }
-            
-            [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-            [System.Runtime.Serialization.DataContractAttribute(Name="ticket.typeType.idType", Namespace="http://schemas.qbranch.se/2014/04/ticket")]
-            public enum idType : int
-            {
-                
-                [System.Runtime.Serialization.EnumMemberAttribute()]
-                chg = 0,
-                
-                [System.Runtime.Serialization.EnumMemberAttribute()]
-                inc = 1,
-                
-                [System.Runtime.Serialization.EnumMemberAttribute()]
-                req = 2,
             }
         }
         
@@ -650,13 +599,6 @@ namespace schemas.qbranch.se._2014._04.ticket
         public class notesType : System.Collections.Generic.List<schemas.qbranch.se._2014._04.ticket.note>
         {
         }
-        
-        [System.Diagnostics.DebuggerStepThroughAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ticket.attachmentsType", Namespace="http://schemas.qbranch.se/2014/04/ticket", ItemName="attachment")]
-        public class attachmentsType : System.Collections.Generic.List<schemas.qbranch.se._2014._04.ticket.attachment>
-        {
-        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -799,57 +741,6 @@ namespace schemas.qbranch.se._2014._04.ticket
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="attachment", Namespace="http://schemas.qbranch.se/2014/04/ticket")]
-    public partial class attachment : object, System.Runtime.Serialization.IExtensibleDataObject
-    {
-        
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private string nameField;
-        
-        private string urlField;
-        
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData
-        {
-            get
-            {
-                return this.extensionDataField;
-            }
-            set
-            {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
-        public string name
-        {
-            get
-            {
-                return this.nameField;
-            }
-            set
-            {
-                this.nameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
-        public string url
-        {
-            get
-            {
-                return this.urlField;
-            }
-            set
-            {
-                this.urlField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="create_new_ticket", Namespace="http://schemas.qbranch.se/2014/04/ticket")]
     public partial class create_new_ticket : object, System.Runtime.Serialization.IExtensibleDataObject
     {
@@ -864,7 +755,9 @@ namespace schemas.qbranch.se._2014._04.ticket
         
         private string classification_idField;
         
-        private schemas.qbranch.se._2014._04.ticket.create_new_ticket.typeType typeField;
+        private string application_idField;
+        
+        private string ticket_typeField;
         
         private schemas.qbranch.se._2014._04.ticket.create_new_ticket.contactType contactField;
         
@@ -873,8 +766,6 @@ namespace schemas.qbranch.se._2014._04.ticket
         private schemas.qbranch.se._2014._04.ticket.create_new_ticket.notesType notesField;
         
         private schemas.qbranch.se._2014._04.ticket.create_new_ticket.businessType businessField;
-        
-        private schemas.qbranch.se._2014._04.ticket.create_new_ticket.attachmentsType attachmentsField;
         
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
@@ -941,19 +832,32 @@ namespace schemas.qbranch.se._2014._04.ticket
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public schemas.qbranch.se._2014._04.ticket.create_new_ticket.typeType type
+        public string application_id
         {
             get
             {
-                return this.typeField;
+                return this.application_idField;
             }
             set
             {
-                this.typeField = value;
+                this.application_idField = value;
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=5)]
+        public string ticket_type
+        {
+            get
+            {
+                return this.ticket_typeField;
+            }
+            set
+            {
+                this.ticket_typeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
         public schemas.qbranch.se._2014._04.ticket.create_new_ticket.contactType contact
         {
             get
@@ -966,7 +870,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
         public schemas.qbranch.se._2014._04.ticket.create_new_ticket.infoType info
         {
             get
@@ -979,7 +883,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
         public schemas.qbranch.se._2014._04.ticket.create_new_ticket.notesType notes
         {
             get
@@ -992,7 +896,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
         public schemas.qbranch.se._2014._04.ticket.create_new_ticket.businessType business
         {
             get
@@ -1002,85 +906,6 @@ namespace schemas.qbranch.se._2014._04.ticket
             set
             {
                 this.businessField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
-        public schemas.qbranch.se._2014._04.ticket.create_new_ticket.attachmentsType attachments
-        {
-            get
-            {
-                return this.attachmentsField;
-            }
-            set
-            {
-                this.attachmentsField = value;
-            }
-        }
-        
-        [System.Diagnostics.DebuggerStepThroughAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.DataContractAttribute(Name="create_new_ticket.typeType", Namespace="http://schemas.qbranch.se/2014/04/ticket")]
-        public partial class typeType : object, System.Runtime.Serialization.IExtensibleDataObject
-        {
-            
-            private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-            
-            private schemas.qbranch.se._2014._04.ticket.create_new_ticket.typeType.idType idField;
-            
-            private string descriptionField;
-            
-            public System.Runtime.Serialization.ExtensionDataObject ExtensionData
-            {
-                get
-                {
-                    return this.extensionDataField;
-                }
-                set
-                {
-                    this.extensionDataField = value;
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-            public schemas.qbranch.se._2014._04.ticket.create_new_ticket.typeType.idType id
-            {
-                get
-                {
-                    return this.idField;
-                }
-                set
-                {
-                    this.idField = value;
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-            public string description
-            {
-                get
-                {
-                    return this.descriptionField;
-                }
-                set
-                {
-                    this.descriptionField = value;
-                }
-            }
-            
-            [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-            [System.Runtime.Serialization.DataContractAttribute(Name="create_new_ticket.typeType.idType", Namespace="http://schemas.qbranch.se/2014/04/ticket")]
-            public enum idType : int
-            {
-                
-                [System.Runtime.Serialization.EnumMemberAttribute()]
-                chg = 0,
-                
-                [System.Runtime.Serialization.EnumMemberAttribute()]
-                inc = 1,
-                
-                [System.Runtime.Serialization.EnumMemberAttribute()]
-                req = 2,
             }
         }
         
@@ -1561,64 +1386,6 @@ namespace schemas.qbranch.se._2014._04.ticket
                 }
             }
         }
-        
-        [System.Diagnostics.DebuggerStepThroughAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.CollectionDataContractAttribute(Name="create_new_ticket.attachmentsType", Namespace="http://schemas.qbranch.se/2014/04/ticket", ItemName="attachment")]
-        public class attachmentsType : System.Collections.Generic.List<schemas.qbranch.se._2014._04.ticket.create_new_ticket.attachmentsType.attachmentType>
-        {
-            
-            [System.Diagnostics.DebuggerStepThroughAttribute()]
-            [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-            [System.Runtime.Serialization.DataContractAttribute(Name="create_new_ticket.attachmentsType.attachmentType", Namespace="http://schemas.qbranch.se/2014/04/ticket")]
-            public partial class attachmentType : object, System.Runtime.Serialization.IExtensibleDataObject
-            {
-                
-                private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-                
-                private string nameField;
-                
-                private string urlField;
-                
-                public System.Runtime.Serialization.ExtensionDataObject ExtensionData
-                {
-                    get
-                    {
-                        return this.extensionDataField;
-                    }
-                    set
-                    {
-                        this.extensionDataField = value;
-                    }
-                }
-                
-                [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
-                public string name
-                {
-                    get
-                    {
-                        return this.nameField;
-                    }
-                    set
-                    {
-                        this.nameField = value;
-                    }
-                }
-                
-                [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
-                public string url
-                {
-                    get
-                    {
-                        return this.urlField;
-                    }
-                    set
-                    {
-                        this.urlField = value;
-                    }
-                }
-            }
-        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1696,7 +1463,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             
             private string textField;
             
-            private schemas.qbranch.se._2014._04.ticket.add_note_to_ticket.noteType.typeType typeField;
+            private string typeField;
             
             private System.DateTime dateField;
             
@@ -1733,8 +1500,8 @@ namespace schemas.qbranch.se._2014._04.ticket
                 }
             }
             
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-            public schemas.qbranch.se._2014._04.ticket.add_note_to_ticket.noteType.typeType type
+            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
+            public string type
             {
                 get
                 {
@@ -1810,18 +1577,6 @@ namespace schemas.qbranch.se._2014._04.ticket
                     this.user_last_nameField = value;
                 }
             }
-            
-            [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-            [System.Runtime.Serialization.DataContractAttribute(Name="add_note_to_ticket.noteType.typeType", Namespace="http://schemas.qbranch.se/2014/04/ticket")]
-            public enum typeType : int
-            {
-                
-                [System.Runtime.Serialization.EnumMemberAttribute()]
-                history = 0,
-                
-                [System.Runtime.Serialization.EnumMemberAttribute()]
-                solution = 1,
-            }
         }
     }
     
@@ -1837,7 +1592,7 @@ namespace schemas.qbranch.se._2014._04.ticket
         
         private string ticket_idField;
         
-        private schemas.qbranch.se._2014._04.ticket.update_ticket_status.ticket_statusType ticket_statusField;
+        private string ticket_statusField;
         
         private schemas.qbranch.se._2014._04.ticket.update_ticket_status.noteType noteField;
         
@@ -1879,8 +1634,8 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public schemas.qbranch.se._2014._04.ticket.update_ticket_status.ticket_statusType ticket_status
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
+        public string ticket_status
         {
             get
             {
@@ -2042,14 +1797,86 @@ namespace schemas.qbranch.se._2014._04.ticket
                 solution = 1,
             }
         }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="add_attachment_to_ticket", Namespace="http://schemas.qbranch.se/2014/04/ticket")]
+    public partial class add_attachment_to_ticket : object, System.Runtime.Serialization.IExtensibleDataObject
+    {
         
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.DataContractAttribute(Name="update_ticket_status.ticket_statusType", Namespace="http://schemas.qbranch.se/2014/04/ticket")]
-        public enum ticket_statusType : int
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private string customer_idField;
+        
+        private string ticket_idField;
+        
+        private string attachment_nameField;
+        
+        private string attachment_uriField;
+        
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
-            
-            [System.Runtime.Serialization.EnumMemberAttribute()]
-            closed = 0,
+            get
+            {
+                return this.extensionDataField;
+            }
+            set
+            {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
+        public string customer_id
+        {
+            get
+            {
+                return this.customer_idField;
+            }
+            set
+            {
+                this.customer_idField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
+        public string ticket_id
+        {
+            get
+            {
+                return this.ticket_idField;
+            }
+            set
+            {
+                this.ticket_idField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=2)]
+        public string attachment_name
+        {
+            get
+            {
+                return this.attachment_nameField;
+            }
+            set
+            {
+                this.attachment_nameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=3)]
+        public string attachment_uri
+        {
+            get
+            {
+                return this.attachment_uriField;
+            }
+            set
+            {
+                this.attachment_uriField = value;
+            }
         }
     }
 }
