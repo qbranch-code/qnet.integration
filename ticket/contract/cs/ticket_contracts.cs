@@ -35,10 +35,6 @@ namespace schemas.qbranch.se._2014._04.ticket
         
         private string service_nameField;
         
-        private string classification_idField;
-        
-        private string classification_nameField;
-        
         private string application_idField;
         
         private string application_nameField;
@@ -52,6 +48,8 @@ namespace schemas.qbranch.se._2014._04.ticket
         private schemas.qbranch.se._2014._04.ticket.ticket.notesType notesField;
         
         private schemas.qbranch.se._2014._04.ticket.ticket.businessType businessField;
+        
+        private schemas.qbranch.se._2014._04.ticket.ticket.classificationType classificationField;
         
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
@@ -143,33 +141,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=6)]
-        public string classification_id
-        {
-            get
-            {
-                return this.classification_idField;
-            }
-            set
-            {
-                this.classification_idField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public string classification_name
-        {
-            get
-            {
-                return this.classification_nameField;
-            }
-            set
-            {
-                this.classification_nameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
         public string application_id
         {
             get
@@ -182,7 +154,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
         public string application_name
         {
             get
@@ -195,7 +167,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=10)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=8)]
         public string ticket_type
         {
             get
@@ -208,7 +180,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
         public schemas.qbranch.se._2014._04.ticket.ticket.contactType contact
         {
             get
@@ -221,7 +193,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
         public schemas.qbranch.se._2014._04.ticket.ticket.infoType info
         {
             get
@@ -234,7 +206,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
         public schemas.qbranch.se._2014._04.ticket.ticket.notesType notes
         {
             get
@@ -247,7 +219,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
         public schemas.qbranch.se._2014._04.ticket.ticket.businessType business
         {
             get
@@ -257,6 +229,19 @@ namespace schemas.qbranch.se._2014._04.ticket
             set
             {
                 this.businessField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=13)]
+        public schemas.qbranch.se._2014._04.ticket.ticket.classificationType classification
+        {
+            get
+            {
+                return this.classificationField;
+            }
+            set
+            {
+                this.classificationField = value;
             }
         }
         
@@ -595,6 +580,87 @@ namespace schemas.qbranch.se._2014._04.ticket
         
         [System.Diagnostics.DebuggerStepThroughAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="ticket.classificationType", Namespace="http://schemas.qbranch.se/2014/04/ticket")]
+        public partial class classificationType : object, System.Runtime.Serialization.IExtensibleDataObject
+        {
+            
+            private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+            
+            private string idField;
+            
+            private string categoryField;
+            
+            private string nameField;
+            
+            private string descriptionField;
+            
+            public System.Runtime.Serialization.ExtensionDataObject ExtensionData
+            {
+                get
+                {
+                    return this.extensionDataField;
+                }
+                set
+                {
+                    this.extensionDataField = value;
+                }
+            }
+            
+            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
+            public string id
+            {
+                get
+                {
+                    return this.idField;
+                }
+                set
+                {
+                    this.idField = value;
+                }
+            }
+            
+            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+            public string category
+            {
+                get
+                {
+                    return this.categoryField;
+                }
+                set
+                {
+                    this.categoryField = value;
+                }
+            }
+            
+            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+            public string name
+            {
+                get
+                {
+                    return this.nameField;
+                }
+                set
+                {
+                    this.nameField = value;
+                }
+            }
+            
+            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+            public string description
+            {
+                get
+                {
+                    return this.descriptionField;
+                }
+                set
+                {
+                    this.descriptionField = value;
+                }
+            }
+        }
+        
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
         [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ticket.notesType", Namespace="http://schemas.qbranch.se/2014/04/ticket", ItemName="note")]
         public class notesType : System.Collections.Generic.List<schemas.qbranch.se._2014._04.ticket.note>
         {
@@ -767,6 +833,8 @@ namespace schemas.qbranch.se._2014._04.ticket
         
         private schemas.qbranch.se._2014._04.ticket.create_new_ticket.businessType businessField;
         
+        private schemas.qbranch.se._2014._04.ticket.create_new_ticket.classificationType classificationField;
+        
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -906,6 +974,19 @@ namespace schemas.qbranch.se._2014._04.ticket
             set
             {
                 this.businessField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=10)]
+        public schemas.qbranch.se._2014._04.ticket.create_new_ticket.classificationType classification
+        {
+            get
+            {
+                return this.classificationField;
+            }
+            set
+            {
+                this.classificationField = value;
             }
         }
         
@@ -1238,6 +1319,87 @@ namespace schemas.qbranch.se._2014._04.ticket
                 set
                 {
                     this.severity_descriptionField = value;
+                }
+            }
+        }
+        
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="create_new_ticket.classificationType", Namespace="http://schemas.qbranch.se/2014/04/ticket")]
+        public partial class classificationType : object, System.Runtime.Serialization.IExtensibleDataObject
+        {
+            
+            private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+            
+            private string idField;
+            
+            private string categoryField;
+            
+            private string nameField;
+            
+            private string descriptionField;
+            
+            public System.Runtime.Serialization.ExtensionDataObject ExtensionData
+            {
+                get
+                {
+                    return this.extensionDataField;
+                }
+                set
+                {
+                    this.extensionDataField = value;
+                }
+            }
+            
+            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
+            public string id
+            {
+                get
+                {
+                    return this.idField;
+                }
+                set
+                {
+                    this.idField = value;
+                }
+            }
+            
+            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+            public string category
+            {
+                get
+                {
+                    return this.categoryField;
+                }
+                set
+                {
+                    this.categoryField = value;
+                }
+            }
+            
+            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+            public string name
+            {
+                get
+                {
+                    return this.nameField;
+                }
+                set
+                {
+                    this.nameField = value;
+                }
+            }
+            
+            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+            public string description
+            {
+                get
+                {
+                    return this.descriptionField;
+                }
+                set
+                {
+                    this.descriptionField = value;
                 }
             }
         }
