@@ -825,6 +825,8 @@ namespace schemas.qbranch.se._2014._04.ticket
         
         private string ticket_typeField;
         
+        private string ticket_statusField;
+        
         private schemas.qbranch.se._2014._04.ticket.create_new_ticket.contactType contactField;
         
         private schemas.qbranch.se._2014._04.ticket.create_new_ticket.infoType infoField;
@@ -925,7 +927,20 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=6)]
+        public string ticket_status
+        {
+            get
+            {
+                return this.ticket_statusField;
+            }
+            set
+            {
+                this.ticket_statusField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
         public schemas.qbranch.se._2014._04.ticket.create_new_ticket.contactType contact
         {
             get
@@ -938,7 +953,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
         public schemas.qbranch.se._2014._04.ticket.create_new_ticket.infoType info
         {
             get
@@ -951,7 +966,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
         public schemas.qbranch.se._2014._04.ticket.create_new_ticket.notesType notes
         {
             get
@@ -964,7 +979,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
         public schemas.qbranch.se._2014._04.ticket.create_new_ticket.businessType business
         {
             get
@@ -977,7 +992,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=10)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=11)]
         public schemas.qbranch.se._2014._04.ticket.create_new_ticket.classificationType classification
         {
             get
@@ -1222,15 +1237,9 @@ namespace schemas.qbranch.se._2014._04.ticket
             
             private string impactField;
             
-            private string impact_descriptionField;
-            
             private string priorityField;
             
-            private string priority_descriptionField;
-            
             private string severityField;
-            
-            private string severity_descriptionField;
             
             public System.Runtime.Serialization.ExtensionDataObject ExtensionData
             {
@@ -1258,19 +1267,6 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
             
             [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-            public string impact_description
-            {
-                get
-                {
-                    return this.impact_descriptionField;
-                }
-                set
-                {
-                    this.impact_descriptionField = value;
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
             public string priority
             {
                 get
@@ -1284,19 +1280,6 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
             
             [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-            public string priority_description
-            {
-                get
-                {
-                    return this.priority_descriptionField;
-                }
-                set
-                {
-                    this.priority_descriptionField = value;
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
             public string severity
             {
                 get
@@ -1306,19 +1289,6 @@ namespace schemas.qbranch.se._2014._04.ticket
                 set
                 {
                     this.severityField = value;
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-            public string severity_description
-            {
-                get
-                {
-                    return this.severity_descriptionField;
-                }
-                set
-                {
-                    this.severity_descriptionField = value;
                 }
             }
         }
