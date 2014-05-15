@@ -91,7 +91,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
         public string ticket_guid
         {
             get
@@ -867,7 +867,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public string ticket_guid
         {
             get
