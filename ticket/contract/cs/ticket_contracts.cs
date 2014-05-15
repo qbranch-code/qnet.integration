@@ -1601,10 +1601,6 @@ namespace schemas.qbranch.se._2014._04.ticket
             
             private string textField;
             
-            private string typeField;
-            
-            private System.DateTime dateField;
-            
             private string user_emailField;
             
             private string user_nameField;
@@ -1639,32 +1635,6 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
             
             [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
-            public string type
-            {
-                get
-                {
-                    return this.typeField;
-                }
-                set
-                {
-                    this.typeField = value;
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-            public System.DateTime date
-            {
-                get
-                {
-                    return this.dateField;
-                }
-                set
-                {
-                    this.dateField = value;
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=3)]
             public string user_email
             {
                 get
@@ -1677,7 +1647,7 @@ namespace schemas.qbranch.se._2014._04.ticket
                 }
             }
             
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=4)]
+            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
             public string user_name
             {
                 get
@@ -1690,7 +1660,7 @@ namespace schemas.qbranch.se._2014._04.ticket
                 }
             }
             
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
             public string user_first_name
             {
                 get
@@ -1703,7 +1673,7 @@ namespace schemas.qbranch.se._2014._04.ticket
                 }
             }
             
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
             public string user_last_name
             {
                 get
@@ -1808,10 +1778,6 @@ namespace schemas.qbranch.se._2014._04.ticket
             
             private string textField;
             
-            private string typeField;
-            
-            private System.DateTime dateField;
-            
             private string user_emailField;
             
             private string user_nameField;
@@ -1846,32 +1812,6 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
             
             [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
-            public string type
-            {
-                get
-                {
-                    return this.typeField;
-                }
-                set
-                {
-                    this.typeField = value;
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-            public System.DateTime date
-            {
-                get
-                {
-                    return this.dateField;
-                }
-                set
-                {
-                    this.dateField = value;
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=3)]
             public string user_email
             {
                 get
@@ -1884,7 +1824,7 @@ namespace schemas.qbranch.se._2014._04.ticket
                 }
             }
             
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=4)]
+            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
             public string user_name
             {
                 get
@@ -1897,7 +1837,7 @@ namespace schemas.qbranch.se._2014._04.ticket
                 }
             }
             
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
             public string user_first_name
             {
                 get
@@ -1910,7 +1850,7 @@ namespace schemas.qbranch.se._2014._04.ticket
                 }
             }
             
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
             public string user_last_name
             {
                 get
