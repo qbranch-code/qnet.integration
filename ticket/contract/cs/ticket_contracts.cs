@@ -1578,7 +1578,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=2)]
         public schemas.qbranch.se._2014._04.ticket.add_note_to_ticket.noteType note
         {
             get
@@ -1755,7 +1755,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=3)]
         public schemas.qbranch.se._2014._04.ticket.update_ticket_status.noteType note
         {
             get
