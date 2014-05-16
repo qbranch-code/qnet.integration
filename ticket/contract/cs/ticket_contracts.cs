@@ -840,8 +840,6 @@ namespace schemas.qbranch.se._2014._04.ticket
         
         private schemas.qbranch.se._2014._04.ticket.create_new_ticket.businessType businessField;
         
-        private schemas.qbranch.se._2014._04.ticket.create_new_ticket.classificationType classificationField;
-        
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -1007,19 +1005,6 @@ namespace schemas.qbranch.se._2014._04.ticket
             set
             {
                 this.businessField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=12)]
-        public schemas.qbranch.se._2014._04.ticket.create_new_ticket.classificationType classification
-        {
-            get
-            {
-                return this.classificationField;
-            }
-            set
-            {
-                this.classificationField = value;
             }
         }
         
@@ -1307,87 +1292,6 @@ namespace schemas.qbranch.se._2014._04.ticket
                 set
                 {
                     this.severityField = value;
-                }
-            }
-        }
-        
-        [System.Diagnostics.DebuggerStepThroughAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.DataContractAttribute(Name="create_new_ticket.classificationType", Namespace="http://schemas.qbranch.se/2014/04/ticket")]
-        public partial class classificationType : object, System.Runtime.Serialization.IExtensibleDataObject
-        {
-            
-            private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-            
-            private string idField;
-            
-            private string categoryField;
-            
-            private string nameField;
-            
-            private string descriptionField;
-            
-            public System.Runtime.Serialization.ExtensionDataObject ExtensionData
-            {
-                get
-                {
-                    return this.extensionDataField;
-                }
-                set
-                {
-                    this.extensionDataField = value;
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
-            public string id
-            {
-                get
-                {
-                    return this.idField;
-                }
-                set
-                {
-                    this.idField = value;
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-            public string category
-            {
-                get
-                {
-                    return this.categoryField;
-                }
-                set
-                {
-                    this.categoryField = value;
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-            public string name
-            {
-                get
-                {
-                    return this.nameField;
-                }
-                set
-                {
-                    this.nameField = value;
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-            public string description
-            {
-                get
-                {
-                    return this.descriptionField;
-                }
-                set
-                {
-                    this.descriptionField = value;
                 }
             }
         }
