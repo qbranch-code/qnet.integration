@@ -822,13 +822,9 @@ namespace schemas.qbranch.se._2014._04.ticket
         
         private string ticket_descriptionField;
         
-        private string service_idField;
-        
         private string classification_idField;
         
         private string application_idField;
-        
-        private string ticket_typeField;
         
         private string ticket_statusField;
         
@@ -892,19 +888,6 @@ namespace schemas.qbranch.se._2014._04.ticket
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=3)]
-        public string service_id
-        {
-            get
-            {
-                return this.service_idField;
-            }
-            set
-            {
-                this.service_idField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=4)]
         public string classification_id
         {
             get
@@ -917,7 +900,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
         public string application_id
         {
             get
@@ -930,20 +913,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=6)]
-        public string ticket_type
-        {
-            get
-            {
-                return this.ticket_typeField;
-            }
-            set
-            {
-                this.ticket_typeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=5)]
         public string ticket_status
         {
             get
@@ -956,7 +926,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
         public schemas.qbranch.se._2014._04.ticket.create_new_ticket.contactType contact
         {
             get
@@ -969,7 +939,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
         public schemas.qbranch.se._2014._04.ticket.create_new_ticket.infoType info
         {
             get
@@ -982,7 +952,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
         public schemas.qbranch.se._2014._04.ticket.create_new_ticket.notesType notes
         {
             get
@@ -995,7 +965,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=9)]
         public schemas.qbranch.se._2014._04.ticket.create_new_ticket.businessType business
         {
             get
