@@ -691,95 +691,15 @@ namespace schemas.qbranch.se._2014._04.ticket
         
         [System.Diagnostics.DebuggerStepThroughAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.DataContractAttribute(Name="ticket.attachmentsType", Namespace="http://schemas.qbranch.se/2014/04/ticket")]
-        public partial class attachmentsType : object, System.Runtime.Serialization.IExtensibleDataObject
+        [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ticket.notesType", Namespace="http://schemas.qbranch.se/2014/04/ticket", ItemName="note")]
+        public class notesType : System.Collections.Generic.List<schemas.qbranch.se._2014._04.ticket.note>
         {
-            
-            private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-            
-            private schemas.qbranch.se._2014._04.ticket.ticket.attachmentsType.attachmentType attachmentField;
-            
-            public System.Runtime.Serialization.ExtensionDataObject ExtensionData
-            {
-                get
-                {
-                    return this.extensionDataField;
-                }
-                set
-                {
-                    this.extensionDataField = value;
-                }
-            }
-            
-            [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
-            public schemas.qbranch.se._2014._04.ticket.ticket.attachmentsType.attachmentType attachment
-            {
-                get
-                {
-                    return this.attachmentField;
-                }
-                set
-                {
-                    this.attachmentField = value;
-                }
-            }
-            
-            [System.Diagnostics.DebuggerStepThroughAttribute()]
-            [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-            [System.Runtime.Serialization.DataContractAttribute(Name="ticket.attachmentsType.attachmentType", Namespace="http://schemas.qbranch.se/2014/04/ticket")]
-            public partial class attachmentType : object, System.Runtime.Serialization.IExtensibleDataObject
-            {
-                
-                private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-                
-                private string idField;
-                
-                private string nameField;
-                
-                public System.Runtime.Serialization.ExtensionDataObject ExtensionData
-                {
-                    get
-                    {
-                        return this.extensionDataField;
-                    }
-                    set
-                    {
-                        this.extensionDataField = value;
-                    }
-                }
-                
-                [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
-                public string id
-                {
-                    get
-                    {
-                        return this.idField;
-                    }
-                    set
-                    {
-                        this.idField = value;
-                    }
-                }
-                
-                [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
-                public string name
-                {
-                    get
-                    {
-                        return this.nameField;
-                    }
-                    set
-                    {
-                        this.nameField = value;
-                    }
-                }
-            }
         }
         
         [System.Diagnostics.DebuggerStepThroughAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ticket.notesType", Namespace="http://schemas.qbranch.se/2014/04/ticket", ItemName="note")]
-        public class notesType : System.Collections.Generic.List<schemas.qbranch.se._2014._04.ticket.note>
+        [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ticket.attachmentsType", Namespace="http://schemas.qbranch.se/2014/04/ticket", ItemName="attachment")]
+        public class attachmentsType : System.Collections.Generic.List<schemas.qbranch.se._2014._04.ticket.attachment>
         {
         }
     }
@@ -906,6 +826,72 @@ namespace schemas.qbranch.se._2014._04.ticket
             set
             {
                 this.user_last_nameField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="attachment", Namespace="http://schemas.qbranch.se/2014/04/ticket")]
+    public partial class attachment : object, System.Runtime.Serialization.IExtensibleDataObject
+    {
+        
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private string idField;
+        
+        private string nameField;
+        
+        private long sizeField;
+        
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData
+        {
+            get
+            {
+                return this.extensionDataField;
+            }
+            set
+            {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
+        public string id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
+        public string name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public long size
+        {
+            get
+            {
+                return this.sizeField;
+            }
+            set
+            {
+                this.sizeField = value;
             }
         }
     }
