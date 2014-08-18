@@ -43,6 +43,8 @@ namespace schemas.qbranch.se._2014._04.ticket
         
         private string ticket_typeField;
         
+        private string third_partyField;
+        
         private schemas.qbranch.se._2014._04.ticket.ticket.contactType contactField;
         
         private schemas.qbranch.se._2014._04.ticket.ticket.infoType infoField;
@@ -198,6 +200,19 @@ namespace schemas.qbranch.se._2014._04.ticket
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public string third_party
+        {
+            get
+            {
+                return this.third_partyField;
+            }
+            set
+            {
+                this.third_partyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
         public schemas.qbranch.se._2014._04.ticket.ticket.contactType contact
         {
             get
@@ -210,7 +225,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=11)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
         public schemas.qbranch.se._2014._04.ticket.ticket.infoType info
         {
             get
@@ -223,7 +238,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
         public schemas.qbranch.se._2014._04.ticket.ticket.notesType notes
         {
             get
@@ -236,7 +251,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=14)]
         public schemas.qbranch.se._2014._04.ticket.ticket.businessType business
         {
             get
@@ -249,7 +264,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=14)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=15)]
         public schemas.qbranch.se._2014._04.ticket.ticket.classificationType classification
         {
             get
@@ -262,7 +277,7 @@ namespace schemas.qbranch.se._2014._04.ticket
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=15)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=16)]
         public schemas.qbranch.se._2014._04.ticket.ticket.attachmentsType attachments
         {
             get
