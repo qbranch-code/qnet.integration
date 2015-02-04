@@ -23,7 +23,7 @@ public class TicketSubscriber {
 		    opts.setReceiveMode(ReceiveMode.PEEK_LOCK);
 		 
 		    while(true)  { 
-		        ReceiveSubscriptionMessageResult  resultSubMsg = service.receiveSubscriptionMessage("message-out-from-qnet-dev", "8001-ticket", opts);
+		        ReceiveSubscriptionMessageResult  resultSubMsg = service.receiveSubscriptionMessage("topic", "subscription", opts);
 		        BrokeredMessage message = resultSubMsg.getValue();
 		        
 		        if (message != null && message.getMessageId() != null)
