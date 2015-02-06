@@ -42,9 +42,7 @@ public class TicketSubscriber {
             }
         }
         catch(final Exception e) {
-            System.out.print("ServiceException encountered: ");
-            System.out.println(e.getMessage());
-            System.exit(-1);
+            e.printStackTrace();
         }
     }
 }
