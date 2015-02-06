@@ -6,4 +6,4 @@
 //
 
 @javax.xml.bind.annotation.XmlSchema(namespace = "http://schemas.qbranch.se/2014/04/ticket", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package se.qbranch.tickets;
+package se.qbranch.tickets.jaxb;

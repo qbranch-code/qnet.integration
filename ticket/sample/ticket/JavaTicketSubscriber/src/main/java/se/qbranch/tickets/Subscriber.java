@@ -1,7 +1,8 @@
+package se.qbranch.tickets;
 import static java.lang.System.getProperty;
 import static java.lang.System.getenv;
 
-import se.qbranch.tickets.Ticket;
+import se.qbranch.tickets.jaxb.Ticket;
 
 import java.util.Optional;
 
@@ -17,7 +18,7 @@ import com.microsoft.windowsazure.services.servicebus.models.ReceiveMessageOptio
 import com.microsoft.windowsazure.services.servicebus.models.ReceiveMode;
 import com.microsoft.windowsazure.services.servicebus.models.ReceiveSubscriptionMessageResult;
 
-public class TicketSubscriber {
+public class Subscriber {
 
     private final ServiceBusContract service;
     private final ReceiveMessageOptions opts;
@@ -25,13 +26,13 @@ public class TicketSubscriber {
     private final String subscription;
 
     public static void main(final String[] args) throws ServiceException {
-        final TicketSubscriber subscriber = new TicketSubscriber();
+        final Subscriber subscriber = new Subscriber();
         while(true) {
-            subscriber.receive().ifPresent(TicketSubscriber::debug);
+            subscriber.receive().ifPresent(Subscriber::debug);
         }
     }
 
-    public TicketSubscriber() {
+    public Subscriber() {
         this.service = createContract();
         this.opts = createOpts();
         this.topic = config("topic");
