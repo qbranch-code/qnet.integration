@@ -1,4 +1,9 @@
+import static java.lang.System.getProperty;
+import static java.lang.System.getenv;
+
 import se.qbranch.tickets.Ticket;
+
+import java.util.Optional;
 
 import javax.xml.bind.JAXB;
 
@@ -40,17 +45,16 @@ public class TicketSubscriber {
     }
 
     private static ServiceBusContract createContract() {
-        final String namespace = "namespace";
-        final String user = "user";
-        final String password = "password";
-        final Configuration config =
-                ServiceBusConfiguration.configureWithWrapAuthentication(
-                        namespace,
-                        user,
-                        password,
-                        ".servicebus.windows.net",
-                        "-sb.accesscontrol.windows.net/WRAPv0.9");
-        final ServiceBusContract service = ServiceBusService.create(config);
-        return service;
+        final Configuration config = ServiceBusConfiguration.configureWithWrapAuthentication(
+                config("namespace"),
+                config("user"),
+                config("password"),
+                ".servicebus.windows.net",
+                "-sb.accesscontrol.windows.net/WRAPv0.9");
+        return ServiceBusService.create(config);
+    }
+
+    private static String config(final String name) {
+        return Optional.ofNullable(getenv(name)).orElseGet(() -> getProperty(name));
     }
 }
