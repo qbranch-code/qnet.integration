@@ -1,0 +1,1 @@
+subscriber: java $JAVA_OPTS $WORKER_JAVA_OPTS -Djdk.xml.entityExpansionLimit=0 -jar target/qnet-ticket.jar

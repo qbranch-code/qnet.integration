@@ -18,7 +18,7 @@ The ticket subscriber sample requires the following configuration paramters to b
 * ...`topic`: foo
 * ...`subscription`: bar
 
-...they can either be set as os environment variables or as properties passed to the JVM on startup using the `-D<property>=<value>` command line syntax.
+...they can either be set as os environment variables or as properties passed to the JVM on startup using the `-D<property>=<value>` command line syntax. A fairly sane way of running is by putting the above variables in a `.env` file in the root of the project (in the format `<var>=<value>`), install [foreman](https://github.com/ddollar/foreman#foreman) and then running `mvn clean package && foreman start`.
 
 ### Thanks
 * [chids](https://github.com/chids) for help with the Java samples
