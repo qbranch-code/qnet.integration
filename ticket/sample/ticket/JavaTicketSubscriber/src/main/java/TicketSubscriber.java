@@ -19,24 +19,30 @@ import com.microsoft.windowsazure.services.servicebus.models.ReceiveSubscription
 
 public class TicketSubscriber {
 
-    public static void main(final String[] args) {
-        final ServiceBusContract service = createContract();
-        try {
-            while(true) {
-                receive(service).ifPresent(TicketSubscriber::debug);
-            }
-        }
-        catch(final Exception e) {
-            e.printStackTrace();
+    private final ServiceBusContract service;
+    private final ReceiveMessageOptions opts;
+    private final String topic;
+    private final String subscription;
+
+    public static void main(final String[] args) throws ServiceException {
+        final TicketSubscriber subscriber = new TicketSubscriber();
+        while(true) {
+            subscriber.receive().ifPresent(TicketSubscriber::debug);
         }
     }
 
-    private static Optional<Ticket> receive(final ServiceBusContract service) throws ServiceException {
-        final ReceiveMessageOptions opts = ReceiveMessageOptions.DEFAULT;
-        opts.setReceiveMode(ReceiveMode.PEEK_LOCK);
-        final String topic = config("topic");
-        final String subscription = config("subscription");
-        final ReceiveSubscriptionMessageResult result = service.receiveSubscriptionMessage(topic, subscription, opts);
+    public TicketSubscriber() {
+        this.service = createContract();
+        this.opts = createOpts();
+        this.topic = config("topic");
+        this.subscription = config("subscription");
+    }
+
+    private Optional<Ticket> receive() throws ServiceException {
+        final ReceiveSubscriptionMessageResult result = this.service.receiveSubscriptionMessage(
+                this.topic,
+                this.subscription,
+                this.opts);
         final BrokeredMessage message = result.getValue();
         if((message != null) && (message.getMessageId() != null)) {
             return Optional.of(JAXB.unmarshal(message.getBody(), Ticket.class));
@@ -59,6 +65,12 @@ public class TicketSubscriber {
                 ".servicebus.windows.net",
                 "-sb.accesscontrol.windows.net/WRAPv0.9");
         return ServiceBusService.create(config);
+    }
+
+    private static ReceiveMessageOptions createOpts() {
+        final ReceiveMessageOptions opts = ReceiveMessageOptions.DEFAULT;
+        opts.setReceiveMode(ReceiveMode.PEEK_LOCK);
+        return opts;
     }
 
     private static String config(final String name) {
