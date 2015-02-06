@@ -8,6 +8,7 @@ import java.util.Optional;
 import javax.xml.bind.JAXB;
 
 import com.microsoft.windowsazure.Configuration;
+import com.microsoft.windowsazure.exception.ServiceException;
 import com.microsoft.windowsazure.services.servicebus.ServiceBusConfiguration;
 import com.microsoft.windowsazure.services.servicebus.ServiceBusContract;
 import com.microsoft.windowsazure.services.servicebus.ServiceBusService;
@@ -21,27 +22,32 @@ public class TicketSubscriber {
     public static void main(final String[] args) {
         final ServiceBusContract service = createContract();
         try {
-            final ReceiveMessageOptions opts = ReceiveMessageOptions.DEFAULT;
-            opts.setReceiveMode(ReceiveMode.PEEK_LOCK);
             while(true) {
-                final ReceiveSubscriptionMessageResult resultSubMsg = service.receiveSubscriptionMessage("topic",
-                        "subscription", opts);
-                final BrokeredMessage message = resultSubMsg.getValue();
-                if((message != null) && (message.getMessageId() != null)) {
-                    final Ticket t = JAXB.unmarshal(message.getBody(), Ticket.class);
-                    System.out.println(t.getTicketId());
-                    System.out.println(t.getCustomerId());
-                    System.out.println(t.getTicketDescription());
-                    System.out.println("-----------");
-                }
-                else {
-                    System.out.println("No new messages");
-                }
+                receive(service).ifPresent(TicketSubscriber::debug);
             }
         }
         catch(final Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private static Optional<Ticket> receive(final ServiceBusContract service) throws ServiceException {
+        final ReceiveMessageOptions opts = ReceiveMessageOptions.DEFAULT;
+        opts.setReceiveMode(ReceiveMode.PEEK_LOCK);
+        final ReceiveSubscriptionMessageResult resultSubMsg = service.receiveSubscriptionMessage("topic",
+                "subscription", opts);
+        final BrokeredMessage message = resultSubMsg.getValue();
+        if((message != null) && (message.getMessageId() != null)) {
+            return Optional.of(JAXB.unmarshal(message.getBody(), Ticket.class));
+        }
+        return Optional.empty();
+    }
+
+    private static void debug(final Ticket t) {
+        System.out.println(t.getTicketId());
+        System.out.println(t.getCustomerId());
+        System.out.println(t.getTicketDescription());
+        System.out.println("-----------");
     }
 
     private static ServiceBusContract createContract() {
