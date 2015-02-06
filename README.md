@@ -7,3 +7,6 @@ Contains public components such as schemas for use in integrations between third
 ### Java samples
 
 The Java samples requires that you have Java 8 and Maven 3 installed and "properly" setup (in your path etc), this will allow you to compile and package the projects using the command `mvn clean package`.
+
+### Thanks
+* [chids](https://github.com/chids) for help with the Java samples
