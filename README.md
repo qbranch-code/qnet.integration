@@ -15,6 +15,8 @@ The ticket subscriber sample requires the following configuration paramters to b
 * ...`namespace`: blah
 * ...`user`: bleh
 * ...`password`: bloh
+* ...`topic`: foo
+* ...`subscription`: bar
 
 ...they can either be set as os environment variables or as properties passed to the JVM on startup using the `-D<property>=<value>` command line syntax.
 

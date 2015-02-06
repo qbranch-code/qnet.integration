@@ -34,9 +34,10 @@ public class TicketSubscriber {
     private static Optional<Ticket> receive(final ServiceBusContract service) throws ServiceException {
         final ReceiveMessageOptions opts = ReceiveMessageOptions.DEFAULT;
         opts.setReceiveMode(ReceiveMode.PEEK_LOCK);
-        final ReceiveSubscriptionMessageResult resultSubMsg = service.receiveSubscriptionMessage("topic",
-                "subscription", opts);
-        final BrokeredMessage message = resultSubMsg.getValue();
+        final String topic = config("topic");
+        final String subscription = config("subscription");
+        final ReceiveSubscriptionMessageResult result = service.receiveSubscriptionMessage(topic, subscription, opts);
+        final BrokeredMessage message = result.getValue();
         if((message != null) && (message.getMessageId() != null)) {
             return Optional.of(JAXB.unmarshal(message.getBody(), Ticket.class));
         }
