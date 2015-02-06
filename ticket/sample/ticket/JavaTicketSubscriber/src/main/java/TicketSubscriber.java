@@ -14,14 +14,7 @@ import com.microsoft.windowsazure.services.servicebus.models.ReceiveSubscription
 public class TicketSubscriber {
 
     public static void main(final String[] args) {
-        final Configuration config =
-                ServiceBusConfiguration.configureWithWrapAuthentication(
-                        "namespace",
-                        "user",
-                        "password",
-                        ".servicebus.windows.net",
-                        "-sb.accesscontrol.windows.net/WRAPv0.9");
-        final ServiceBusContract service = ServiceBusService.create(config);
+        final ServiceBusContract service = createContract();
         try {
             final ReceiveMessageOptions opts = ReceiveMessageOptions.DEFAULT;
             opts.setReceiveMode(ReceiveMode.PEEK_LOCK);
@@ -44,5 +37,20 @@ public class TicketSubscriber {
         catch(final Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private static ServiceBusContract createContract() {
+        final String namespace = "namespace";
+        final String user = "user";
+        final String password = "password";
+        final Configuration config =
+                ServiceBusConfiguration.configureWithWrapAuthentication(
+                        namespace,
+                        user,
+                        password,
+                        ".servicebus.windows.net",
+                        "-sb.accesscontrol.windows.net/WRAPv0.9");
+        final ServiceBusContract service = ServiceBusService.create(config);
+        return service;
     }
 }
