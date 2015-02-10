@@ -6,7 +6,7 @@
 //
 
 
-package se.qbranch.tickets;
+package se.qbranch.tickets.jaxb;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

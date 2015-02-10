@@ -6,7 +6,7 @@
 //
 
 
-package se.qbranch.tickets;
+package se.qbranch.tickets.jaxb;
 
 import java.util.ArrayList;
 import java.util.List;
