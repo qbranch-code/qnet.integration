@@ -32,7 +32,8 @@ namespace TicketSubscriber
                     {
                         if (message.Properties.Contains(new KeyValuePair<string, object>("messagetype", "ticket")))
                         {
-                            var ticket = message.GetBody<ticket>();
+                            var ser = new DataContractSerializer(typeof (ticket));
+                            var ticket = message.GetBody<ticket>(ser);
                             Console.WriteLine("ticket_number: " + ticket.ticket_id);
                         }
                         
