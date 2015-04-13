@@ -1,8 +1,12 @@
 qnet.integration
 ================
 
-Contains public components such as schemas for use in integrations between third parties and Qnet.
+Contains public components such as schemas for use in integrations with Qbranch. The schemas and samples currently available focus on the push-type integration of tickets via Azure Servicebus. 
 
+You currently have to roll your own classes to serialize/deserialize while interacting with our REST API.
+
+### C# samples
+The C# samples target .NET 4.5x and Visual Studio 2013. Connection string parameters can be configured in `app.config`
 
 ### Java samples
 
@@ -10,7 +14,7 @@ The Java samples requires that you have Java 8 and Maven 3 installed and "proper
 
 #### TicketSubscriber
 
-The ticket subscriber sample requires the following configuration paramters to be present...
+The ticket subscriber sample requires the following configuration parameters to be present...
 
 * ...`namespace`: blah
 * ...`user`: bleh
